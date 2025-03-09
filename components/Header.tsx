@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 const Header: React.FC = () => {
   const router = useRouter();
   const isActive: (pathname: string) => boolean = (pathname) => {
-    console.log(pathname);
     return router.pathname === pathname;
   }
 
