@@ -4,12 +4,14 @@ import { useRouter } from "next/router";
 
 const Header: React.FC = () => {
   const router = useRouter();
-  const isActive: (pathname: string) => boolean = (pathname) =>
-    router.pathname === pathname;
+  const isActive: (pathname: string) => boolean = (pathname) => {
+    console.log(pathname);
+    return router.pathname === pathname;
+  }
 
   let left = (
     <div className="left">
-      <Link href="/">
+      <Link legacyBehavior href="/">
         <a className="bold" data-active={isActive("/")}>
           Feed
         </a>
