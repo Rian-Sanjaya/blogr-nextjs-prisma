@@ -13,7 +13,8 @@ export default async function handle(req, res) {
     data: {
       title: title,
       content: content,
-      author: { connect: { email: session?.user?.email } },
+      // author: { connect: { email: session?.user?.email } },
+      author: { connect: { email: 'rian.sj@gmail.com' } },
     },
   });
   res.json(result);

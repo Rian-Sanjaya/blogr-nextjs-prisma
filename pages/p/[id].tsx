@@ -67,11 +67,13 @@ const Post: React.FC<PostProps> = (props) => {
         <h2>{title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
         <ReactMarkdown children={props.content} />
-        {!props.published && userHasValidSession && postBelongsToUser && (
+        {/* {!props.published && userHasValidSession && postBelongsToUser && ( */}
+        {!props.published && (
           <button onClick={() => publishPost(props.id)}>Publish</button>
         )}
         {
-          userHasValidSession && postBelongsToUser && (
+          // userHasValidSession && postBelongsToUser && (
+            userHasValidSession && (
             <button onClick={() => deletePost(props.id)}>Delete</button>
           )
         }
